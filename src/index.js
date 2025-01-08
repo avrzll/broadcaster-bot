@@ -8,8 +8,6 @@ import {
   Browsers,
 } from "@whiskeysockets/baileys";
 
-// const { default: makeWASocket } = require("@whiskeysockets/baileys");
-
 import readline from "readline";
 import { handlerMessages } from "./controllers/messages.js";
 import Pino from "pino";
@@ -67,9 +65,7 @@ async function startBot() {
 
   sock.ev.on("messages.upsert", async ({ messages }) => {
     const m = messages[0];
-    // console.log(m);
     handlerMessages(sock, m);
-    // sock.end();
   });
 }
 

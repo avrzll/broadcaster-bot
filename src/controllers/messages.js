@@ -75,7 +75,7 @@ ${chalk.blue("=> In")} ${chalk.green(remoteJid)}
         console.log(jidList);
 
         function sendText(nomer, message, minDelay, maxDelay, onComplete) {
-          let index = 0; // Mulai dari nomor pertama
+          let index = 0;
 
           const sendMessage = () => {
             if (index < nomer.length) {
@@ -83,7 +83,6 @@ ${chalk.blue("=> In")} ${chalk.green(remoteJid)}
               console.log(`Kirim pesan berhasil ke: ${nomer[index]}`);
               index++;
 
-              // Jika masih ada nomor yang harus dikirim, buat delay
               if (index < nomer.length) {
                 const randomDelay =
                   Math.random() * (maxDelay - minDelay) + minDelay;
@@ -92,18 +91,16 @@ ${chalk.blue("=> In")} ${chalk.green(remoteJid)}
                     1
                   )} menit sebelum pesan berikutnya...`
                 );
-                setTimeout(sendMessage, randomDelay); // Lanjutkan pengiriman dengan delay
+                setTimeout(sendMessage, randomDelay);
               } else {
-                // Jika ini adalah nomor terakhir, langsung panggil onComplete
                 onComplete();
               }
             }
           };
 
-          sendMessage(); // Panggil fungsi pertama kali
+          sendMessage();
         }
 
-        // Panggil fungsi sendText
         sendText(jidList, text, delay, delay + 60000, () => {
           console.log(
             "Semua pesan telah dikirim. Menutup koneksi dalam 3 detik..."
