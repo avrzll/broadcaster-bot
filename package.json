@@ -1,0 +1,30 @@
+{
+  "name": "broadcaster-bot",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/test.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "node_modules",
+      "src/sessions",
+      ".gitignore",
+      "package.json",
+      "package-lock.json"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.9",
+    "chalk": "^5.4.1",
+    "dayjs": "^1.11.13",
+    "nodemon": "^3.1.9"
+  }
+}
